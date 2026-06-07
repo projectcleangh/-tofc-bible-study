@@ -1,31 +1,21 @@
-// The ordered phases a leader steps through with the "Advance" button.
-// 'reflection' is the starting phase when a session is created.
-export const PHASES = ['reflection', 'reading', 'q1', 'q2', 'q3', 'floor', 'done'];
-
-// Which question order_index a given phase maps to (null = not a question phase)
-export const PHASE_QUESTION_INDEX = { q1: 1, q2: 2, q3: 3 };
-
-export function nextPhase(phase) {
-  const i = PHASES.indexOf(phase);
-  if (i === -1 || i === PHASES.length - 1) return phase;
-  return PHASES[i + 1];
-}
-
-export function prevPhase(phase) {
-  const i = PHASES.indexOf(phase);
-  if (i <= 0) return phase;
-  return PHASES[i - 1];
-}
-
-export function phaseLabelKey(phase) {
-  switch (phase) {
-    case 'reflection': return 'phase_reflection';
-    case 'reading': return 'phase_reading';
-    case 'q1': return 'phase_q1';
-    case 'q2': return 'phase_q2';
-    case 'q3': return 'phase_q3';
-    case 'floor': return 'phase_floor';
-    case 'done': return 'phase_done';
-    default: return 'phase_reflection';
+{
+  "name": "tofc-bible-study",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
   }
 }
